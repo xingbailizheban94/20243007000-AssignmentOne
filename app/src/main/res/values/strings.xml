@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">CampusLife</string>
+
+    <!-- 主界面文字 -->
+    <string name="welcome_message">Welcome to CampusLife - Your Pocket Guide to University of Waikato</string>
+
+    <!-- 图片无障碍描述 -->
+    <string name="campus_background">Campus background</string>
+    <string name="btn_facilities_desc">Facilities button</string>
+    <string name="btn_events_desc">Events button</string>
+    <string name="btn_clubs_desc">Clubs button</string>
+    <string name="btn_support_desc">Support button</string>
 </resources>

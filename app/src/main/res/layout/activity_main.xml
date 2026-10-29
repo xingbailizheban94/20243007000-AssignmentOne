@@ -2,18 +2,97 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!-- 上半部分：背景图（名字改了！） -->
+    <ImageView
+        android:id="@+id/ivHeader"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="Campus background"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_main_banner"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight="1" />
+
+    <!-- 欢迎文字 -->
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:layout_margin="16dp"
+        android:text="@string/welcome_message"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/ivHeader"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ivHeader" />
+
+    <!-- 下半部分：2x2 的按钮网格 -->
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/green"
+        android:columnCount="2"
+        android:rowCount="2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/ivHeader"
+        app:layout_constraintVertical_weight="1">
+
+        <ImageButton
+            android:id="@+id/btnFacilities"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:background="@drawable/button_selector"
+            android:contentDescription="Facilities button"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_btn_facilities" />
+
+        <ImageButton
+            android:id="@+id/btnEvents"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:background="@drawable/button_selector"
+            android:contentDescription="Events button"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_btn_events" />
+
+        <ImageButton
+            android:id="@+id/btnClubs"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:background="@drawable/button_selector"
+            android:contentDescription="Clubs button"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_btn_clubs" />
+
+        <ImageButton
+            android:id="@+id/btnSupport"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:background="@drawable/button_selector"
+            android:contentDescription="Support button"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_btn_support" />
+
+    </GridLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
