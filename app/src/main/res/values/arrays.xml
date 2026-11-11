@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="string_array_images">
-        <item> img_btn_facilities </item>
-        <item> img_btn_events </item>
-        <item> img_btn_clubs </item>
-        <item> img_btn_support </item>
+        <item> img_btn_facilities</item>
+        <item> img_btn_events</item>
+        <item> img_btn_clubs</item>
+        <item> img_btn_support</item>
     </string-array>
 
     <string-array name="string_array_titles">

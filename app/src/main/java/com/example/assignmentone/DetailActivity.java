@@ -3,7 +3,8 @@ package com.example.assignmentone;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toast;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class DetailActivity extends AppCompatActivity {
 
@@ -12,11 +13,28 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
-        // 接收 MainActivity 传过来的数字
         Intent intent = getIntent();
-        int itemIndex = intent.getIntExtra("ITEM_INDEX", -1);
+        int itemIndex = intent.getIntExtra("ITEM_INDEX", 0);
 
-        // 测试一下有没有收到（Part G 验证）
-        Toast.makeText(this, "Received item index: " + itemIndex, Toast.LENGTH_SHORT).show();
+        ImageView ivDetailIcon = findViewById(R.id.ivDetailIcon);
+        TextView tvDetailHeaderTitle = findViewById(R.id.tvDetailHeaderTitle);
+        TextView tvDetailTitle = findViewById(R.id.tvDetailTitle);
+        TextView tvDetailContent = findViewById(R.id.tvDetailContent);
+
+        String[] titles = getResources().getStringArray(R.array.string_array_titles);
+        String[] contents = getResources().getStringArray(R.array.string_array_content);
+        String[] imageNames = getResources().getStringArray(R.array.string_array_images);
+
+        String currentTitle = titles[itemIndex];
+        String currentContent = contents[itemIndex];
+        String currentImageName = imageNames[itemIndex];
+
+        tvDetailHeaderTitle.setText(currentTitle);
+        tvDetailTitle.setText(currentTitle);
+        tvDetailContent.setText(currentContent);
+
+        // 极其重要：加了 .trim() 防止数组里有空格导致找不到图片闪退！
+        int resId = getResources().getIdentifier(currentImageName.trim(), "drawable", getPackageName());
+        ivDetailIcon.setImageResource(resId);
     }
 }

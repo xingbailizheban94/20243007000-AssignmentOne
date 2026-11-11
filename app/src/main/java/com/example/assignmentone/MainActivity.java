@@ -18,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
         ImageButton btnClubs = findViewById(R.id.btnClubs);
         ImageButton btnSupport = findViewById(R.id.btnSupport);
 
-        // 1. Facilities (传数字 0)
         btnFacilities.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -28,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // 2. Events (传数字 1)
         btnEvents.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // 3. Clubs (传数字 2)
         btnClubs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // 4. Support (传数字 3)
         btnSupport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

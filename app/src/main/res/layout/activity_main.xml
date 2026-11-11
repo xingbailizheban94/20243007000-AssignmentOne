@@ -1,53 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <!-- 上半部分：背景图（名字改了！） -->
-    <ImageView
-        android:id="@+id/ivHeader"
-        android:layout_width="0dp"
+    <!-- 上半部分：背景图与文字 -->
+    <FrameLayout
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:contentDescription="Campus background"
-        android:scaleType="centerCrop"
-        android:src="@drawable/img_main_banner"
-        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_weight="1" />
+        android:layout_weight="1">
 
-    <!-- 欢迎文字 -->
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="@string/welcome_message"
-        android:textAlignment="center"
-        android:textColor="@android:color/white"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/ivHeader"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/ivHeader" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/campus_background"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_main_banner" />
 
-    <!-- 下半部分：2x2 的按钮网格 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            android:text="@string/welcome_message"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+    <!-- 下半部分：2x2 网格 -->
     <GridLayout
-        android:id="@+id/gridLayout"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_weight="1"
         android:background="@color/green"
         android:columnCount="2"
-        android:rowCount="2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivHeader"
-        app:layout_constraintVertical_weight="1">
+        android:rowCount="2">
 
         <ImageButton
             android:id="@+id/btnFacilities"
@@ -56,7 +47,7 @@
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:background="@drawable/button_selector"
-            android:contentDescription="Facilities button"
+            android:contentDescription="Facilities"
             android:scaleType="fitCenter"
             android:src="@drawable/img_btn_facilities" />
 
@@ -67,7 +58,7 @@
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:background="@drawable/button_selector"
-            android:contentDescription="Events button"
+            android:contentDescription="Events"
             android:scaleType="fitCenter"
             android:src="@drawable/img_btn_events" />
 
@@ -78,7 +69,7 @@
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:background="@drawable/button_selector"
-            android:contentDescription="Clubs button"
+            android:contentDescription="Clubs"
             android:scaleType="fitCenter"
             android:src="@drawable/img_btn_clubs" />
 
@@ -89,10 +80,9 @@
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:background="@drawable/button_selector"
-            android:contentDescription="Support button"
+            android:contentDescription="Support"
             android:scaleType="fitCenter"
             android:src="@drawable/img_btn_support" />
 
     </GridLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
