@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailActivity">
+
+    <!-- 顶部横幅背景 -->
+    <ImageView
+        android:id="@+id/ivDetailBanner"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="Banner background"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_main_banner"
+        app:layout_constraintDimensionRatio="16:9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 半透明黑色遮罩（为了让白色的字和图标看得清） -->
+    <View
+        android:id="@+id/headerOverlay"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#80000000"
+        app:layout_constraintBottom_toBottomOf="@+id/ivDetailBanner"
+        app:layout_constraintEnd_toEndOf="@+id/ivDetailBanner"
+        app:layout_constraintStart_toStartOf="@+id/ivDetailBanner"
+        app:layout_constraintTop_toTopOf="@+id/ivDetailBanner" />
+
+    <!-- 顶部左侧图标 -->
+    <ImageView
+        android:id="@+id/ivDetailIcon"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        android:contentDescription="Category icon"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/ivDetailBanner"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toStartOf="@+id/ivDetailBanner"
+        app:layout_constraintTop_toTopOf="@+id/ivDetailBanner"
+        app:layout_constraintWidth_percent="0.25"
+        tools:src="@drawable/img_btn_facilities" />
+
+    <!-- 顶部右侧标题文字 -->
+    <TextView
+        android:id="@+id/tvDetailHeaderTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:textColor="@android:color/white"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/ivDetailBanner"
+        app:layout_constraintEnd_toEndOf="@+id/ivDetailBanner"
+        app:layout_constraintStart_toEndOf="@+id/ivDetailIcon"
+        app:layout_constraintTop_toTopOf="@+id/ivDetailBanner"
+        tools:text="Facilities" />
+
+    <!-- 中间页面标题 -->
+    <TextView
+        android:id="@+id/tvDetailTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivDetailBanner"
+        tools:text="This is a title" />
+
+    <!-- 下面可滚动的内容区 -->
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDetailTitle">
+
+        <TextView
+            android:id="@+id/tvDetailContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            tools:text="This is content" />
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
